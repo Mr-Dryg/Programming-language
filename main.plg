@@ -1,0 +1,27 @@
+{
+    int n, i, k, num;
+    bool simple;
+    input(n);
+    simple := True;
+    num := 2;
+    k := 0;
+    while ((num < n) or (num = n))
+    {
+        i := 2;
+        while ((i - 1 < num ** 0.5) and simple)
+        {
+            if ((num % i = 0) and (num != i))
+            {
+                simple := False;
+            };
+            i := i + 1;
+        };
+        if (simple)
+        {
+            k := k + 1;
+        };
+        num := num + 1;
+        simple := True;
+    };
+    print(k);
+}
